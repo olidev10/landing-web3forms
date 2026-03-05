@@ -1,17 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Simple Landing</title>
+<title>Landing Page</title>
 
 <link rel="stylesheet" href="styles.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -19,38 +15,36 @@
 
 <div class="container">
 
-    <h1>Simple Demo Landing Page</h1>
-    <p class="subtitle">
-    This page demonstrates a redirect button and a working contact form.
-    </p>
+<h1>Simple Landing Page</h1>
 
-    <!-- Redirect Button -->
-    <a class="btn" href="https://example.com">
-    Go to Website
-    </a>
+<p class="subtitle">
+Demo page with redirect button and working contact form.
+</p>
 
-    <!-- Contact Form -->
+<a id="redirect-btn" class="btn">
+Go to Website
+</a>
 
-    <form action="https://api.web3forms.com/submit" method="POST" class="form">
+<form id="contact-form" class="form">
 
-        <input type="hidden" name="access_key" value="7cba3acc-6d19-4ae5-8bff-28f9d89d4b0d">
-        <input type="hidden" name="redirect" value="http://127.0.0.1:5500/thanks.html">
-        <input type="checkbox" name="botcheck" class="hidden">
+<label>Name</label>
+<input type="text" name="name" required>
 
-        <label>Name</label>
-        <input type="text" name="name" required>
+<label>Email</label>
+<input type="email" name="email" required>
 
-        <label>Email</label>
-        <input type="email" name="email" required>
+<label>Message</label>
+<textarea name="message" rows="5" required></textarea>
 
-        <label>Message</label>
-        <textarea name="message" rows="5" required></textarea>
+<button type="submit">
+Send Message
+</button>
 
-        <button type="submit">Send Message</button>
-
-    </form>
+</form>
 
 </div>
+
+<script src="script.js"></script>
 
 </body>
 </html>

@@ -1,267 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nova — Simple Landing Page</title>
-    <meta
-      name="description"
-      content="A modern, responsive landing page hosted on Vercel with a working contact form via Web3Forms."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <body>
-    <header class="header">
-      <div class="container header__inner">
-        <a class="brand" href="#">
-          <span class="brand__mark">N</span>
-          <span class="brand__name">Nova</span>
-        </a>
+<title>Simple Landing</title>
 
-        <nav class="nav" aria-label="Primary">
-          <a href="#features">Features</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#contact" class="nav__cta">Contact</a>
-        </nav>
-      </div>
-    </header>
+<link rel="stylesheet" href="styles.css">
 
-    <main>
-      <!-- HERO -->
-      <section class="hero">
-        <div class="container hero__grid">
-          <div class="hero__copy">
-            <p class="badge">Hosted on Vercel • Pure HTML/CSS • Contact Form Included</p>
-            <h1>Beautiful landing page, ready to deploy in minutes.</h1>
-            <p class="lead">
-              A clean, modern one-pager you can publish on GitHub + Vercel. Includes a
-              working contact form powered by Web3Forms — no backend and no JavaScript.
-            </p>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-            <div class="hero__actions">
-              <a class="btn btn--primary" href="#contact">Get in touch</a>
-              <a class="btn btn--secondary" href="#features">See features</a>
-            </div>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-            <div class="hero__stats" role="list">
-              <div class="stat" role="listitem">
-                <div class="stat__num">0</div>
-                <div class="stat__label">JavaScript required</div>
-              </div>
-              <div class="stat" role="listitem">
-                <div class="stat__num">1</div>
-                <div class="stat__label">HTML page</div>
-              </div>
-              <div class="stat" role="listitem">
-                <div class="stat__num">100%</div>
-                <div class="stat__label">Responsive</div>
-              </div>
-            </div>
-          </div>
+</head>
 
-          <div class="hero__card" aria-label="Preview card">
-            <div class="card">
-              <div class="card__top">
-                <div class="pill">Fast</div>
-                <div class="pill">Modern</div>
-                <div class="pill">Responsive</div>
-              </div>
+<body>
 
-              <div class="card__body">
-                <h2 class="card__title">What you get</h2>
-                <ul class="checklist">
-                  <li>Mobile-first layout</li>
-                  <li>Clean sections & typography</li>
-                  <li>Accessible HTML structure</li>
-                  <li>Contact form (Web3Forms)</li>
-                </ul>
+<div class="container">
 
-                <div class="card__note">
-                  Tip: Replace the brand name, colors, and copy to match your client.
-                </div>
-              </div>
-            </div>
+    <h1>Simple Demo Landing Page</h1>
+    <p class="subtitle">
+    This page demonstrates a redirect button and a working contact form.
+    </p>
 
-            <div class="glow" aria-hidden="true"></div>
-          </div>
-        </div>
-      </section>
+    <!-- Redirect Button -->
+    <a class="btn" href="https://example.com">
+    Go to Website
+    </a>
 
-      <!-- FEATURES -->
-      <section class="section" id="features">
-        <div class="container">
-          <div class="section__head">
-            <h2>Everything you need for a simple launch</h2>
-            <p>
-              This template is designed for quick client demos: clear structure, strong
-              visual hierarchy, and a real contact flow.
-            </p>
-          </div>
+    <!-- Contact Form -->
 
-          <div class="grid grid--3">
-            <article class="feature">
-              <h3>Modern design</h3>
-              <p>Neutral palette, soft shadows, and a professional layout that fits most industries.</p>
-            </article>
+    <form action="https://api.web3forms.com/submit" method="POST" class="form">
 
-            <article class="feature">
-              <h3>Responsive</h3>
-              <p>Looks great on mobile, tablet, and desktop with a single stylesheet.</p>
-            </article>
+        <input type="hidden" name="access_key" value="7cba3acc-6d19-4ae5-8bff-28f9d89d4b0d">
+        <input type="hidden" name="redirect" value="http://127.0.0.1:5500/thanks.html">
+        <input type="checkbox" name="botcheck" class="hidden">
 
-            <article class="feature">
-              <h3>Functional contact</h3>
-              <p>Web3Forms handles email delivery, so you can keep the site static and simple.</p>
-            </article>
+        <label>Name</label>
+        <input type="text" name="name" required>
 
-            <article class="feature">
-              <h3>No backend</h3>
-              <p>Perfect for Vercel static deployments: fewer moving parts, fewer failures.</p>
-            </article>
+        <label>Email</label>
+        <input type="email" name="email" required>
 
-            <article class="feature">
-              <h3>Accessible</h3>
-              <p>Readable contrast, good spacing, and semantic tags for better UX and SEO.</p>
-            </article>
+        <label>Message</label>
+        <textarea name="message" rows="5" required></textarea>
 
-            <article class="feature">
-              <h3>Easy to customize</h3>
-              <p>Update text, colors, and sections in minutes without touching any JS.</p>
-            </article>
-          </div>
-        </div>
-      </section>
+        <button type="submit">Send Message</button>
 
-      <!-- PRICING -->
-      <section class="section section--alt" id="pricing">
-        <div class="container">
-          <div class="section__head">
-            <h2>Simple pricing</h2>
-            <p>Example section you can keep or remove. Useful for client landing pages.</p>
-          </div>
+    </form>
 
-          <div class="grid grid--3">
-            <div class="price">
-              <h3>Starter</h3>
-              <p class="price__tag">€0</p>
-              <ul class="muted-list">
-                <li>Landing page</li>
-                <li>Responsive layout</li>
-                <li>Basic contact form</li>
-              </ul>
-              <a class="btn btn--secondary btn--block" href="#contact">Choose Starter</a>
-            </div>
+</div>
 
-            <div class="price price--highlight">
-              <div class="price__badge">Most popular</div>
-              <h3>Pro</h3>
-              <p class="price__tag">€99</p>
-              <ul class="muted-list">
-                <li>Copy polish</li>
-                <li>Brand styling</li>
-                <li>Deployment on Vercel</li>
-              </ul>
-              <a class="btn btn--primary btn--block" href="#contact">Choose Pro</a>
-            </div>
-
-            <div class="price">
-              <h3>Business</h3>
-              <p class="price__tag">€199</p>
-              <ul class="muted-list">
-                <li>Extra sections</li>
-                <li>SEO enhancements</li>
-                <li>Analytics setup</li>
-              </ul>
-              <a class="btn btn--secondary btn--block" href="#contact">Choose Business</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT (WEB3FORMS) -->
-      <section class="section" id="contact">
-        <div class="container contact">
-          <div class="contact__copy">
-            <h2>Contact</h2>
-            <p>
-              Send a message — this form posts to Web3Forms and redirects to a thank-you page.
-              No JavaScript required.
-            </p>
-
-            <div class="contact__box">
-              <h3>What happens next?</h3>
-              <ol class="steps">
-                <li>You submit the form.</li>
-                <li>Web3Forms sends the email.</li>
-                <li>You see a success page.</li>
-              </ol>
-            </div>
-          </div>
-
-          <div class="contact__form">
-            <form
-              class="form"
-              action="https://api.web3forms.com/submit"
-              method="POST"
-            >
-              <!-- REQUIRED: your Web3Forms access key -->
-              <input type="hidden" name="access_key" value="PASTE_YOUR_ACCESS_KEY_HERE" />
-
-              <!-- Optional: subject and redirect -->
-              <input type="hidden" name="subject" value="New message from Nova landing page" />
-              <input type="hidden" name="redirect" value="https://YOUR_DOMAIN/thanks.html" />
-
-              <!-- Anti-spam honeypot (must stay hidden) -->
-              <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" />
-
-              <div class="field">
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text" placeholder="Your name" required />
-              </div>
-
-              <div class="field">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="you@email.com" required />
-              </div>
-
-              <div class="field">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="6" placeholder="Tell me about your project..." required></textarea>
-              </div>
-
-              <button class="btn btn--primary btn--block" type="submit">
-                Send message
-              </button>
-
-              <p class="form__hint">
-                By sending, you agree to be contacted back about your request.
-              </p>
-            </form>
-
-            <p class="muted small">
-              Note: Update the <strong>redirect</strong> URL after you deploy (Vercel domain).
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="container footer__inner">
-        <p class="muted">© <span>Nova</span>. Built with pure HTML/CSS. Deployed on Vercel.</p>
-        <div class="footer__links">
-          <a href="#features">Features</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </div>
-    </footer>
-  </body>
+</body>
 </html>
